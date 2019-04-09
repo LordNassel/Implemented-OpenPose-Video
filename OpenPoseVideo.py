@@ -22,7 +22,7 @@ inHeight = 368
 threshold = 0.1
 
 
-input_source = "mysample.mp4"
+input_source = "mysample.mp4" #Source: https://www.youtube.com/watch?v=wCVSv7UxB2E
 cap = cv2.VideoCapture(input_source)
 hasFrame, frame = cap.read()
 
@@ -30,13 +30,13 @@ vid_writer = cv2.VideoWriter('output.avi',cv2.VideoWriter_fourcc('M','J','P','G'
 
 net = cv2.dnn.readNetFromCaffe(protoFile, weightsFile)
 
-while 1:
+while cv2.waitKey(1) < 0:
     t = time.time()
     hasFrame, frame = cap.read()
     frameCopy = np.copy(frame)
-    #if not hasFrame:
-        #cv2.waitKey()
-        #break
+    if not hasFrame:
+        cv2.waitKey()
+        break
 
     frameWidth = frame.shape[1]
     frameHeight = frame.shape[0]
@@ -82,9 +82,9 @@ while 1:
             cv2.circle(frame, points[partB], 8, (0, 0, 255), thickness=-1, lineType=cv2.FILLED)
 
     cv2.putText(frame, "time taken = {:.2f} sec".format(time.time() - t), (50, 50), cv2.FONT_HERSHEY_COMPLEX, .8, (255, 50, 0), 2, lineType=cv2.LINE_AA)
-    # cv2.putText(frame, "OpenPose using OpenCV", (50, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 50, 0), 2, lineType=cv2.LINE_AA)
-    # cv2.imshow('Output-Keypoints', frameCopy)
-    # cv2.imshow('Output-Skeleton', frame)
+    cv2.putText(frame, "OpenPose using OpenCV", (50, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 50, 0), 2, lineType=cv2.LINE_AA)
+    cv2.imshow('Output-Keypoints', frameCopy)
+    cv2.imshow('Output-Skeleton', frame)
 
     vid_writer.write(frame)
 
