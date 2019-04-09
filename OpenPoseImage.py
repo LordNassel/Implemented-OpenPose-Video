@@ -73,8 +73,8 @@ for pair in POSE_PAIRS:
         cv2.circle(frame, points[partA], 8, (0, 0, 255), thickness=-1, lineType=cv2.FILLED)
 
 
-#cv2.imshow('Output-Keypoints', frameCopy)
-#cv2.imshow('Output-Skeleton', frame)
+cv2.imshow('Output-Keypoints', frameCopy)
+cv2.imshow('Output-Skeleton', frame)
 
 
 cv2.imwrite('Output-Keypoints.jpg', frameCopy)
@@ -82,5 +82,5 @@ cv2.imwrite('Output-Skeleton.jpg', frame)
 
 print("Total time taken : {:.3f}".format(time.time() - t))
 
-#cv2.waitKey(0)
+cv2.waitKey(0)
 
