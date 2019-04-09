@@ -1,6 +1,6 @@
 # Implemented-OpenPose-Video
 
-For a more advanced project investigation, I implemented an OpenPose project on Pictures and Videos.
+For more advanced project investigation, I implemented an OpenPose project on Pictures and Videos.
 
 # Insturctions
 
