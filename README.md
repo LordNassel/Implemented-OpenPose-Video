@@ -15,4 +15,5 @@ For a more advanced project investigation, I implemented an OpenPose project on 
 
 # Results on Video
 [Link to Original Video](https://www.youtube.com/watch?v=wCVSv7UxB2E)
+
 ![Edited Output 10.6MB](https://github.com/LordNassel/Implemented-OpenPose-Video/blob/master/edited-output-upload.mp4)
